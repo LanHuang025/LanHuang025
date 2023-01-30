@@ -21,7 +21,7 @@ async function getpic(url) {
       }
     }
   ).catch(error => {
-    console.error(error)
+    showmsg("请勿开启vpn访问本网站")
   });
 
   // Storing data in form of JSON
@@ -37,21 +37,16 @@ async function getpic(url) {
   for (var i = 0; i < copy.length; i++) {
       copy[i].addEventListener("contextmenu", (e) => {
         e.preventDefault();
-        console.log("当前URL为:",e.target.src);
         copyContent(e.target.src)
       });
     }
 }
 async function copyContent(text) {
   try {
-    await navigator.clipboard.writeText("![]{"+text+"}");
-    //console.log('Content copied to clipboard');
-    Snackbar.show({text:'文本被成功复制到剪贴板',pos:'bottom-right'});
-    /* Resolved - 文本被成功复制到剪贴板 */
+    await navigator.clipboard.writeText("![]("+text+")");
+    showmsg("图片被成功复制到剪贴板")
   } catch (err) {
-    //console.error('Failed to copy: ', err);
-    Snackbar.show({text:'文本未被复制到剪贴板',pos:'bottom-right'});
-    /* Rejected - 文本未被复制到剪贴板 */
+    showmsg("图片未被复制到剪贴板")
   }
 }
 
