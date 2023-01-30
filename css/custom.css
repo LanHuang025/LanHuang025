@@ -1,0 +1,66 @@
+/* 页脚与头图透明 */
+#footer {
+    background: transparent !important;
+  }
+  #page-header {
+    background: transparent !important;
+  }
+  
+  /* 白天模式遮罩透明 */
+  #footer::before {
+    background: transparent !important;
+  }
+  #page-header::before {
+    background: transparent !important;
+  }
+  
+  /* 夜间模式遮罩透明 */
+  [data-theme="dark"] #footer::before {
+    background: transparent !important;
+  }
+  [data-theme="dark"] #page-header::before {
+    background: transparent !important;
+  }
+
+/* twikoo背景 */
+#twikoo .el-textarea textarea {
+    min-height: 120px!important;
+    background-size: 90px;
+  }
+  .twikoo .el-input__inner, .twikoo .el-textarea__inner {
+    color: currentColor;
+    background-color: transparent;
+    border-color: rgba(144,147,153,0.31);
+  }
+  .tk-input .el-textarea__inner {
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+  .el-textarea__inner {
+    display: block;
+    resize: vertical;
+    padding: 5px 15px;
+    line-height: 1.5;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: inherit;
+    color: #606266;
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid #DCDFE6;
+    border-radius: 4px;
+    -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+  }
+  
+  .el-textarea__inner {
+    border-radius: 8px!important;
+  }
+  .el-textarea__inner {
+    background-image: url(https://www.fomal.cc/assets/open.webp),url(https://www.fomal.cc/assets/close.webp)!important;
+    
+  }
+  .el-textarea__inner:focus{
+    background-image: url(https://www.fomal.cc/assets/close.webp)!important;
+  }
