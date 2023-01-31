@@ -64,3 +64,11 @@
   .el-textarea__inner:focus{
     background-image: url(https://www.fomal.cc/assets/close.webp)!important;
   }
+
+  #web_bg{
+    background: url(/img/background.webp) no-repeat fixed center top;margin:0;padding:0;;
+    /*重新定义background会导致原有定位属性失效，所以也需要再声明一次加权的定位属性*/
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
