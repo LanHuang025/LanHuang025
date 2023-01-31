@@ -12,20 +12,19 @@ fjGallery(document.querySelectorAll('.my-fj-gallery'), {
 
   }
 });
-async function getpic(url) {
-  // Storing response
-  const response = await fetch(url,
-    {
-      headers: {
-        'Accept': 'application/vnd.github.v3+json'
-      }
-    }
-  ).catch(error => {
-    showmsg("请勿开启vpn访问本网站")
-  });
+async function copyContent(text) {
+  try {
+    await navigator.clipboard.writeText("![]("+text+")");
+    btf.snackbarShow("图片被成功复制到剪贴板")
+  } catch (err) {
+    btf.snackbarShow("图片未被复制到剪贴板")
+  }
+}
 
-  // Storing data in form of JSON
-  var data = await response.json();
+document.addEventListener('DOMContentLoaded', async () => {
+  //外链 gallery 标签相册瀑布流
+  const url = "https://api.github.com/repos/LanHuang025/picturebed/contents/img"
+  var data=await getdata(url)
   var gallery = document.getElementById("github_img")
   let innerhtml= ''
   for (let img of data) {
@@ -40,19 +39,4 @@ async function getpic(url) {
         copyContent(e.target.src)
       });
     }
-}
-async function copyContent(text) {
-  try {
-    await navigator.clipboard.writeText("![]("+text+")");
-    showmsg("图片被成功复制到剪贴板")
-  } catch (err) {
-    showmsg("图片未被复制到剪贴板")
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  //外链 gallery 标签相册瀑布流
-  const url = "https://api.github.com/repos/LanHuang025/picturebed/contents/img"
-  getpic(url)
-  
 });
