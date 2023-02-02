@@ -120,3 +120,11 @@
 .el-textarea__inner:focus {
   background-image: url(https://www.fomal.cc/assets/close.webp) !important;
 }
+
+/* twikoo tk-preview-container 图片太大修复 */
+
+.tk-preview-container img {
+  max-width: 300px;
+  max-height: 300px;
+  vertical-align: middle;
+}
