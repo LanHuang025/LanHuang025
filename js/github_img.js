@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   //外链 gallery 标签相册瀑布流
   const url = "https://api.github.com/repos/LanHuang025/picturebed/contents/img"
   var data = await getdata(url)
-  if (data.message != null) {
-    showmsg('请勿开启vpn访问本网站')
+  if (data==true) {
     return
   }
   var gallery = document.getElementById("github_img")
