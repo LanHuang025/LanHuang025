@@ -31,6 +31,5 @@ window.onload = function () {
       '</tr>'+
      '</tbody>'+
    '</table>'
-document.getElementsByClassName("mdui-table-fluid")[0].innerHTML = html
-mdui.mutation()    
+document.getElementsByClassName("mdui-table-fluid")[0].innerHTML = html  
 }
