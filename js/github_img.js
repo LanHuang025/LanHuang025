@@ -6,7 +6,7 @@ fjGallery(document.querySelectorAll('.my-fj-gallery'), {
     this.$container.style.opacity = '1'
   },
   onInit: function () {
-    //alert("hello world")
+    
   },
   onAppendImages: function () {
 
@@ -15,9 +15,9 @@ fjGallery(document.querySelectorAll('.my-fj-gallery'), {
 async function copyContent(text) {
   try {
     await navigator.clipboard.writeText("![]("+text+")");
-    btf.snackbarShow("图片被成功复制到剪贴板")
+    showmsg("图片被成功复制到剪贴板")
   } catch (err) {
-    btf.snackbarShow("图片未被复制到剪贴板")
+    showmsg("图片未被复制到剪贴板")
   }
 }
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const url = "https://api.github.com/repos/LanHuang025/picturebed/contents/img"
   var data = await getdata(url)
   if (data.message != null) {
-    btf.snackbarShow("请勿开启vpn访问本网站")
+    showmsg('请勿开启vpn访问本网站')
     return
   }
   var gallery = document.getElementById("github_img")
@@ -37,10 +37,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   gallery.innerHTML = innerhtml
   fjGallery(gallery, 'appendImages', gallery.querySelectorAll(`.my-fj-gallery-item:nth-last-child(-n+` + data.length + `)`));
   var copy = document.getElementsByTagName('a');
+  var isclick = true;
   for (var i = 0; i < copy.length; i++) {
       copy[i].addEventListener("contextmenu", (e) => {
         e.preventDefault();
-        copyContent(e.target.src)
+        if(isclick){
+          isclick = false;
+          copyContent(e.target.src)
+          setTimeout(function(){
+              isclick = true;
+          },1000)
+      }
       });
     }
 });

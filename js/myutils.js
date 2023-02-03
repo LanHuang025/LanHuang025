@@ -6,3 +6,10 @@ async function getdata(url) {
     var data = await response.json();
     return data
 }
+function showmsg(message) {
+    mdui.snackbar({
+        message: message,
+        position: 'left-bottom',
+        timeout: 1000
+      });
+}
