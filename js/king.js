@@ -1,6 +1,6 @@
+king_input.value='典韦'
 window.onload = async function () {
   let body = ''
-  king_input.value='典韦'
   search_one_btn.onclick = async function () {
     body = ''
     search_one_btn.disabled = "disabled"
