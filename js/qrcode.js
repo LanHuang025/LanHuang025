@@ -19,4 +19,4 @@ qrcode_confirm_btn.onclick = function () {
     }
     qrcode_clear_btn.onclick=function(){
         qrcode_input.value=""
-    }
+}

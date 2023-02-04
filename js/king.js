@@ -17,7 +17,6 @@ window.onload = async function () {
       showmsg("请输入正确的英雄名称")
       return
     }
-    console.info(power_data)
     power_data = power_data.data
     body += '<tr><td>' + hero_name + '</td><td>' + power_data.guobiao
       + '</td><td>' + power_data.province+power_data.provincePower
