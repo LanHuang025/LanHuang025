@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   //外链 gallery 标签相册瀑布流
   const url = "https://api.github.com/repos/LanHuang025/picturebed/contents/img"
   var data = await getdata(url)
-  if (data == true) {
+  if (data == 404) {
     return
   }
   if (typeof(data.message)!= "undefined") {

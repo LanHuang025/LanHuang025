@@ -8,7 +8,7 @@ window.onload = async function () {
     let hero_name = king_input.value
     const power_url = "https://www.sapi.run/hero/select.php?hero=" + hero_name + "&type=aqq"
     var power_data = await getdata(power_url)
-    if (power_data == true) {
+    if (power_data == 404) {
       search_one_btn.disabled=""
       search_all_btn.disabled =""
       return

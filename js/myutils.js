@@ -9,7 +9,7 @@ async function getdata(url) {
         flag=true
     }
     if (flag) {
-        return flag
+        return 404
     }
     // Storing data in form of JSON
     var data = await response.json();
