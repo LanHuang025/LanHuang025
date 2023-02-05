@@ -22,9 +22,9 @@ function showmsg(message) {
         timeout: 1000
       });
 }
-function download(href, title) {
-    const a = document.createElement('a');
-    a.setAttribute('href', href);
-    a.setAttribute('download', title);
-    a.click();
+function download(url, name){
+    var a = document.createElement("a"); //Create <a>
+    a.href = url
+    a.download = name
+    a.click(); //Downloaded file
 }
