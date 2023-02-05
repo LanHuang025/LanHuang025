@@ -22,7 +22,7 @@ qrcode_clear_btn.onclick = function () {
 }
 var dialogX = new mdui.Dialog('#dialog');
 document.addEventListener('DOMContentLoaded', async () => {
-    document.querySelector('img[style="display: block;"]').addEventListener("contextmenu", (e) => {
+    document.querySelector('#qrcode').addEventListener("contextmenu", (e) => {
         e.preventDefault();
         dialogX.open()
     })
