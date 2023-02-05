@@ -22,14 +22,14 @@ qrcode_clear_btn.onclick = function () {
 }
 var dialogX = new mdui.Dialog('#dialog');
 document.addEventListener('DOMContentLoaded', async () => {
-    document.querySelector('#qrcode').addEventListener("contextmenu", (e) => {
+    document.querySelector('img[style="display: block;"]').addEventListener("contextmenu", (e) => {
         e.preventDefault();
         dialogX.open()
     })
 })
 dialog.addEventListener('confirm.mdui.dialog',
     function () {
-        const url = document.querySelector('img[style="display: block;"]').src;
-        download(url,"二维码")
+        document.querySelector('img[style="display: block;"]')
+        download(document.querySelector('img[style="display: block;"]').src,'二维码'+".jpg");
     }
 )
