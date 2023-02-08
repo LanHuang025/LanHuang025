@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   var gallery = document.getElementById("github_img")
   let innerhtml = ''
   for (let img of data) {
-    innerhtml += '<div class="my-fj-gallery-item"><a href="http://pic.lanhuang.top/img/' + img.name + '"' + 'data-fancybox="gallery" data-caption=""><img src="http://pic.lanhuang.top/img/' + img.name + '"' + '></a></div>'
+    innerhtml += '<div class="my-fj-gallery-item"><a href="https://pic.lanhuang.top/img/' + img.name + '"' + 'data-fancybox="gallery" data-caption=""><img src="https://pic.lanhuang.top/img/' + img.name + '"' + '></a></div>'
   }
   gallery.innerHTML = innerhtml
   fjGallery(gallery, 'appendImages', gallery.querySelectorAll(`.my-fj-gallery-item:nth-last-child(-n+` + data.length + `)`));
